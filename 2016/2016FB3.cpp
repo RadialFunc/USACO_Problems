@@ -19,10 +19,10 @@ int calculateleast(int a, int b, int n){
 int main(){
     freopen("balancing.in", "r", stdin);
     freopen("balancing.out", "w", stdout);
-    int n;
-    cin >> n;
-    int leastx=1000000;
-    int leasty = 1000000;
+    int n,k;
+    cin >> n>>k;
+    int leastx=k;
+    int leasty = k;
     int highestx = 0;
     int highesty =0; 
     for(int i=0; i<n; i++){
