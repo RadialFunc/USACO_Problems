@@ -19,8 +19,8 @@ int intersect(Rect p, Rect q) {
 }
 
 int main() {
-	/*freopen("billboard.in", "r", stdin);
-	freopen("billboard.out", "w", stdout);*/
+	freopen("billboard.in", "r", stdin);
+	freopen("billboard.out", "w", stdout);
 	Rect a,b;
 	cin>>a.x1>>a.y1>>a.x2>>a.y2;
 	cin>>b.x1>>b.y1>>b.x2>>b.y2;
