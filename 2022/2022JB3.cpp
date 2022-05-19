@@ -46,6 +46,6 @@ int main() {
         cin >> num;
         int hunger[num];
         for(int j=0; j<num; j++) cin >> hunger[j];
-        cout <<endl<< feed(hunger,num) ;
+        cout << feed(hunger,num) <<endl;
     }
 }
