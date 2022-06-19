@@ -2,15 +2,15 @@
 #include <algorithm>
 using namespace std;
 
-int feed(int hunger[], int num) {
-    int thingy=0;
+int feed(long long int hunger[], int num) {
+    int thingy=-1;
 
-    for (int i=0; i<hunger[0]; i++){
-        int su=0;
+    for (long long int i=0; i<=hunger[0]; i++){
+        long long int su=0;
         bool can=true;
-        int first = hunger[0]-i;
+        long long int first = hunger[0]-i;
         su+= 2*i;
-        int previous =i;
+        long long int previous =i;
         for (int j=1; j<num-1; j++){
             previous = hunger[j]-previous-first;
             if (previous <0){
@@ -20,7 +20,7 @@ int feed(int hunger[], int num) {
             su+=2*previous;
         }
         if (hunger[num-1]-previous == first && can == true){
-            if (thingy==0){
+            if (thingy==-1){
                 thingy=su;
             }
             else{
@@ -30,10 +30,6 @@ int feed(int hunger[], int num) {
             }
         }
 
-        }
-
-    if(thingy==0){
-    return -1;
     }
     return thingy;
 }
@@ -44,7 +40,7 @@ int main() {
     for (int i=0; i<n; i++){
         int num;
         cin >> num;
-        int hunger[num];
+        long long int hunger[num];
         for(int j=0; j<num; j++) cin >> hunger[j];
         cout << feed(hunger,num) <<endl;
     }

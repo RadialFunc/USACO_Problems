@@ -21,7 +21,7 @@ int main(){
             }
         } else if (second == 'G'){
             if (v[0]%2==1){
-                v.insert(v.begin(0),v[0]+1);
+                v.insert(v.begin(),v[0]+1);
             }
         }
     }
