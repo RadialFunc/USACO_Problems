@@ -14,7 +14,7 @@ int main(){
         char first = letters[n-(2*i)];
         char second = letters[n-(2*i)+1];
         if (first == 'G' && second=='G'){
-            v.insert(v.begin(), 0);
+            v.insert(v.begin(), v[0]);
         }else if (first == 'G'){
             if (v[0] % 2 ==0){
                 v.insert(v.begin(), v[0]+1);
