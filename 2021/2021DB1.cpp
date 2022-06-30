@@ -1,19 +1,41 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int main() {
-  int n;
+  long long int n;
   string s;
   cin >> n >> s;
-  int ans = 0;
-  for(int i = 0; i < (int)s.size(); i++) {
-    int g = 0;
-    int h = 0;
-    for(int j = i; j < (int)s.size(); j++) {
-      if(s[j] == 'G') g++;
-      else h++;
-      if(g+h >= 3 && (g==1 || h==1)) ans++;
+  vector<long long int> other;
+  long long int count = 0;
+  long long int ans=0;
+  char prev = s[0];
+  for(int i=0; i<n; i++){
+    if(s[i]==prev) count++;
+    else{
+      prev = s[i];
+      other.push_back(count);
+      count =1;
+    }
+    if(i==n-1){
+      other.push_back(count);
     }
   }
-  cout << ans << "\n";
+  int l = other.size();
+  if(l==1){ans=0;}
+  else{
+    for(int i=0; i<l; i++){
+      if(i==0){
+        ans+= other[1]-1;
+      }else if(i==l-1){
+        ans+= other[l-2]-1;
+      }else{
+        ans += other[i-1]-1 + other[i+1]-1;
+        if(other[i]==1){
+          ans += other[i-1]*other[i+1];
+        }
+      }
+    }
+  }
+  cout << ans;  
 }
