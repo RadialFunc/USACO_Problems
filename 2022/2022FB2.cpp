@@ -1,4 +1,5 @@
 #include <iostream>
+#include <unordered_map>
 using namespace std;
 
 int main(){
@@ -6,13 +7,14 @@ int main(){
     int n;
     cin >> n;
     int a[n], b[n], c[n];
+    unordered_map<int, int> key;
     for(int i=0; i<n; i++) cin >> a[i];
     for(int i=0; i<n; i++) cin >> b[i];
-    for(int i=1; i<=n; i++){
-        int change = b[i-1];
-        for(int j=0; j<n; j++){
-            if(a[j] == change) c[j] = i;
-        }
+    for(int i=0; i<n; i++){
+        key[b[i]] = i+1;
+    }
+    for(int i=0; i<n; i++){
+        c[i] = key[a[i]];
     }
     int greatest=0;
     for(int i=0; i<n; i++){
