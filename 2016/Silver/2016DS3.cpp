@@ -11,6 +11,8 @@ void dfs(int node){
     }
 }
 int main(){
+    freopen("moocast.in", "r", stdin);
+    freopen("moocast.out", "w", stdout);
     int n; cin >> n;
     int cows[n][3];
     for(int i=0; i<n; i++) cin >> cows[i][0]>>cows[i][1]>>cows[i][2];
